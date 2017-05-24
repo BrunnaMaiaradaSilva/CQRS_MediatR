@@ -1,0 +1,21 @@
+@model CQRS_MediatR.ViewModels.Editar
+@{
+    ViewData["Title"] = Model.Nome.ToString();
+}
+
+<h1>@Model.Nome</h1>
+<h2>@Model.Email</h2>
+<h3>Enderecos</h3>
+<ul>
+    @foreach (var endereco in Model.Enderecos)
+    {
+        <li>@endereco</li>
+    }
+</ul>
+
+<form asp-controller="Pessoa" asp-action="Editar" method="post">
+    Novo E-mail <br />
+    <input asp-for="NovoEmail" />
+
+    <button type="submit">Register</button>
+</form>

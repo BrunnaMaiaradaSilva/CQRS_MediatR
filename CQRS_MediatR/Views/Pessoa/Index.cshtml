@@ -1,0 +1,15 @@
+@model IEnumerable<CQRS_MediatR.Domain.Pessoa>
+@{
+    ViewData["Title"] = "Pessoa";
+}
+
+<h2>Pessoas</h2>
+
+<ul>
+    @foreach (var pessoa in Model)
+    {
+        <li>
+            <a href="/pessoa/editar/@pessoa.Id">@pessoa.Nome</a>
+        </li>
+    }
+</ul>
